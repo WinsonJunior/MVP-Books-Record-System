@@ -4,6 +4,7 @@ package com.example.backend_spring.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @Entity
@@ -11,16 +12,14 @@ import javax.persistence.*;
 public class books {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-
-    @Column(name="id")
     private int id;
 
     @Column(name="name")
     private String name;
 
     @Column(name="createdAt")
-    private String createdAt;
+    private Date createdAt;
 
     @Column(name="updatedAt")
-    private String updatedAt;
+    private Date updatedAt;
 }

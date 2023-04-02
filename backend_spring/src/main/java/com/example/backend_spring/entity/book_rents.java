@@ -4,23 +4,25 @@ package com.example.backend_spring.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @Entity
 @Table(name="book_rents")
 public class book_rents {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
 
-    @Column(name="person_id")
-    private int person_id;
+    @ManyToOne
+    @JoinColumn(name="person_id")
+    private people people;
 
-    @Column(name="book_id")
-    private String book_id;
+    @ManyToOne
+    @JoinColumn(name="book_id")
+    private books books;
 
     @Column(name="createdAt")
-    private String createdAt;
+    private Date createdAt;
 
     @Column(name="updatedAt")
-    private String updatedAt;
+    private Date updatedAt;
 }
