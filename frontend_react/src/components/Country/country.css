@@ -1,0 +1,21 @@
+.country__box {
+
+    box-sizing: border-box;
+    left: 25px;
+    top: 25px;
+    
+    background: #F6ECEC;
+    border: 1.00847px solid #D46767;
+}
+
+.country__box-text{
+    
+
+
+    font-family: 'Inter';
+    font-style: normal;
+    /* identical to box height */
+    text-align: center;
+
+    color: #000000;
+}

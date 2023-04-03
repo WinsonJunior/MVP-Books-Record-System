@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  overflow-y: hidden;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root,
+#root > div {
+  height: 100%;
+}
+
