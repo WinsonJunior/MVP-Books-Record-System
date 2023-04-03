@@ -19,12 +19,12 @@ public class Books_Controller {
     @Autowired
     private Books_Repository booksRepository;
 
-    @GetMapping("")
+    @GetMapping
     public List<books> getAllBooks() {
         return booksRepository.findAll();
     }
 
-    @PostMapping("")
+    @PostMapping
     public books createBook(@RequestBody books book) {
         book.setCreatedAt(new Date());
         book.setUpdatedAt(new Date());

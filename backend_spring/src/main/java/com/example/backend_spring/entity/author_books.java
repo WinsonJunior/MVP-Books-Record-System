@@ -8,21 +8,21 @@ import java.util.Date;
 
 @Data
 @Entity
+@IdClass(author_books_id.class)
 @Table(name="author_books")
 public class author_books {
-    @Id
-    
+
     @Column(name="createdAt")
     private Date createdAt;
 
     @Column(name="updatedAt")
     private Date updatedAt;
 
-    @ManyToOne
-    @JoinColumn(name="author_id")
-    private authors authors;
+    @Id
+    @Column(name="author_id")
+    private long authorId;
 
-    @ManyToOne
-    @JoinColumn(name="book_id")
-    private books books;
+    @Id
+    @Column(name="book_id")
+    private long bookId;
 }
