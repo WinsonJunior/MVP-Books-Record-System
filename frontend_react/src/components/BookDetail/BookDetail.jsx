@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import "./bookDetail.css"
-import { IoIosArrowUp } from 'react-icons/Io'
+import { IoIosArrowUp } from 'react-icons/io'
 
 const BookDetail = ({ bookData }) => {
    
@@ -19,33 +19,37 @@ const BookDetail = ({ bookData }) => {
             {bookData != null ? (
                 <div className="book-list">
                     {bookData.map((book, idx) => (
-                        <div
-                            className="book"
-                            id={`book-item-${idx + 1}`}
-                            data-testid={`book-item-${idx + 1}`}
-                        >
-                            <div className="book-content">
-                                <h1>{`${idx + 1} ${book.name}`}</h1>
-                                <button
-                                    className="book-toggle"
-                                    id="book-toggle"
-                                    data-testid="book-toggle"
-                                    onClick={() => changeActiveIndex(idx)}
+                        <>
+                            <div
+                                className="book"
+                                id={`book-item-${idx + 1}`}
+                                data-testid={`book-item-${idx + 1}`}
+                            >
+                                <div className="accordion-content">
+                                    <h1>{`${idx + 1} ${book.name}`}</h1>
+                                    <button
+                                        className="book-toggle"
+                                        id="book-toggle"
+                                        data-testid="book-toggle"
+                                        onClick={() => changeActiveIndex(idx)}
                                     >
                                         <IoIosArrowUp />
-                                </button>
+                                    </button>
+                                </div>
+                                <div className="book-author">
+                                    <p>{`by ${book.author}`}</p>
+                                </div>
                             </div>
-                            <div className="book-author">
-                                <p>{`by ${book.author}`}</p>
-                            </div>
-                        </div>
-                        { activeIndex[idx] && book.borrower.length > 0 ? (
-                            <div className="book-children">
-                                {book.borrower.map((name, idx) => (
-                                    
-                                ))}
-                            </div>
-                        ) : null}
+                            {activeIndex[idx] && book.borrower.length > 0 ? (
+                                <div className="book-children">
+                                    {book.borrower.map((name, idx) => (
+                                        <div className="customer" id="customer" data-testid="customer">
+                                            <p>{`${name}`}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            ) : null}
+                        </>
 
                         
                     ))}

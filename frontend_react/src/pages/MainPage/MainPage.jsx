@@ -26,13 +26,17 @@ const MainPage = () => {
     
     return (
         <div>
-            <Country 
-                countryCode={countryCode}
-                onChange={() => setCountryCode(getTop3Data())}
-            />
-            <BookDetail 
-                bookData={bookData}
-            />
+            <div className="country">
+                <Country 
+                    countryCode={countryCode}
+                    onChange={() => setCountryCode(getTop3Data())}
+                />
+            </div>
+            <div className="bookDetail">
+                <BookDetail 
+                    bookData={bookData}
+                />
+            </div>
         </div>
     )
 }
