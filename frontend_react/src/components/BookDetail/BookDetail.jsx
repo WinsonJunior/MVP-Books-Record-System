@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import "./bookDetail.css"
 import { IoIosArrowUp } from 'react-icons/io'
 
-const BookDetail = ({ bookData }) => {
+const BookDetail = ({ isDataFound, bookData }) => {
    
     const [activeIndex, setActiveIndex] = useState([0, 0, 0]);
 
@@ -16,7 +16,7 @@ const BookDetail = ({ bookData }) => {
 
     return (
         <div className="container" id="container">
-            {bookData != null ? (
+            {isDataFound && bookData != null ? (
                 <div className="book-list">
                     {bookData.map((book, idx) => (
                         <>

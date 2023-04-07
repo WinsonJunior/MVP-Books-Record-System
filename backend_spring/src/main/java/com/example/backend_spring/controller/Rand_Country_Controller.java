@@ -16,8 +16,8 @@ public class Rand_Country_Controller {
     @Autowired
     CountryCodeService countryCodeService;
 
-    @GetMapping("/getRandCountry")
-    public Map<String, Map<String, String>> getRandCountry() {
+    @GetMapping("/getRandomCountry")
+    public Map<String, Map<String, String>> getRandomCountry() {
         return Map.ofEntries(new AbstractMap.SimpleEntry<>("country", countryCodeService.getRandomCountryCode()));
     }
 }
