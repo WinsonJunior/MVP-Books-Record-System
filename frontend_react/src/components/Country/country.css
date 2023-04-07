@@ -1,16 +1,15 @@
 .country__box {
 
     box-sizing: border-box;
-    left: 25px;
-    top: 25px;
-    
+    margin: 25px 25px;
+    height: 35px;
     background: #F6ECEC;
     border: 1.00847px solid #D46767;
 }
 
 .country__box-text{
+    margin: 5px;
     
-
 
     font-family: 'Inter';
     font-style: normal;

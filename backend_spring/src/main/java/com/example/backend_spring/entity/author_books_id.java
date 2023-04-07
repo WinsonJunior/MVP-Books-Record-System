@@ -6,11 +6,11 @@ import java.io.Serializable;
 
 @Data
 public class author_books_id implements Serializable {
-    private long authorId;
-    private long bookId;
+    private authors authors;
+    private books books;
 
-    public author_books_id(long authorId, long bookId){
-        this.authorId = authorId;
-        this.bookId = bookId;
+    public author_books_id(authors authors, books books){
+        this.authors = authors;
+        this.books = books;
     }
 }

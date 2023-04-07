@@ -1,15 +1,17 @@
-import React, {useState, useEffect} from 'react'
+import React, {} from 'react'
 import "./country.css"
 
-const Country = () => {
-    const [countryValue, setCountryValue] = useState("SG");
+const Country = ({countryCode, onChange}) => {
     
     
     return (
         <button 
-            onClick= {onchange()}
-            className="country__box">
-            <text className="country__box-text">Get country: {countryValue}</text>
+            onClick={onChange}
+            className="country__box"
+            data-testid="action-btn"
+            id="action-btn"
+            >
+                <p className="country__box-text">Get country: {countryCode}</p>
         </button>
     )
 }

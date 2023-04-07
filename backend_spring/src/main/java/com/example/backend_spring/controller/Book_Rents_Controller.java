@@ -3,17 +3,14 @@ package com.example.backend_spring.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.backend_spring.entity.book_rents;
 import com.example.backend_spring.repository.Book_Rents_Repository;
 
 @RestController
 @RequestMapping("/api/book_rents")
+@CrossOrigin(origins ="http://localhost:3000")
 public class Book_Rents_Controller {
     @Autowired
     private Book_Rents_Repository book_Rents_Repository;

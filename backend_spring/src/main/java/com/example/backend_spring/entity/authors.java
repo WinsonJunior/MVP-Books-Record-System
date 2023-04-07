@@ -12,8 +12,6 @@ import java.util.Date;
 public class authors {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-
-    @Column(name="id")
     private int id;
 
     @Column(name="name")
