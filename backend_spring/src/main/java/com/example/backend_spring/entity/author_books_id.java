@@ -13,4 +13,8 @@ public class author_books_id implements Serializable {
         this.authors = authors;
         this.books = books;
     }
+
+    public author_books_id() {
+
+    }
 }

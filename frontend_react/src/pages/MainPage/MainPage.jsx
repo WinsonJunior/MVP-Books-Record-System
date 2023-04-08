@@ -20,15 +20,15 @@ const MainPage = () => {
 
     const getTop3Data = async () => {
         let randomCountry = await getRandomCountry();
-
+        randomCountry = "ID";
         const response = await fetch(`http://localhost:8080/getTop3ReadBook?country_code=${randomCountry}`);
         const top3Books = await response.json();
 
-        console.log(top3Books.message);
 
-        if (top3Books.message === "no results") {
+        if (Object.keys(top3Books).length === 0) {
             setIsDataFound(false);
         } else {
+            console.log("bookData: ", top3Books)
             setIsDataFound(true);
             setBookData(top3Books);
         }

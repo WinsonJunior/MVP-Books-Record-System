@@ -25,17 +25,21 @@ public class author_books {
     @JoinColumn(name="book_id")
     private books books;
 
-    @Column(name="createdAt")
-    private Date createdAt;
+    @Column(name="created_at")
+    private Date created_at;
 
-    @Column(name="updatedAt")
-    private Date updatedAt;
+    @Column(name="updated_at")
+    private Date updated_at;
 
-    public author_books(authors authors, books books, Date createdAt, Date updatedAt) {
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+    public author_books(authors authors, books books, Date created_at, Date updated_at) {
+        this.created_at = created_at;
+        this.updated_at = updated_at;
         this.authors = authors;
         this.books = books;
+    }
+
+    public author_books() {
+
     }
 
 }

@@ -29,8 +29,8 @@ public class CountryCodeService {
             File file = ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + fileName);
 
             CSVReader csvReader = new CSVReaderBuilder(new FileReader(file))
-                    .withSkipLines(1)
-                    .build();
+                                                    .withSkipLines(1)
+                                                    .build();
             List<String[]> data = csvReader.readAll();
 
             for(String[] line: data) {

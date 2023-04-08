@@ -17,11 +17,11 @@ public class people {
     @Column(name="name")
     private String name;
 
-    @Column(name="createdAt")
-    private Date createdAt;
+    @Column(name="created_at")
+    private Date created_at;
 
-    @Column(name="updatedAt")
-    private Date updatedAt;
+    @Column(name="updated_at")
+    private Date updated_at;
 
     @Column(name="country_id")
     private Long country_id;

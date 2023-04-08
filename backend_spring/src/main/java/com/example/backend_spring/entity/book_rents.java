@@ -1,6 +1,7 @@
 package com.example.backend_spring.entity;
 
 
+import com.sun.istack.NotNull;
 import lombok.Data;
 
 import java.lang.Long;
@@ -15,15 +16,26 @@ public class book_rents {
 
     @Id
     @Column(name="people_id")
-    private Long peopleId;
+    private Long people_id;
 
     @Id
     @Column(name="book_id")
-    private Long bookId;
+    private Long book_id;
 
-    @Column(name="createdAt")
-    private Date createdAt;
+    @Id
+    @Column(name="created_at")
+    private Date created_at;
 
-    @Column(name="updatedAt")
-    private Date updatedAt;
+    @Id
+    @Column(name="updated_at")
+    private Date updated_at;
+
+    public book_rents(Long people_id, Long book_id, Date created_at, Date updated_at) {
+        this.people_id = people_id;
+        this.book_id = book_id;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
+    }
+
+    public book_rents() { }
 }

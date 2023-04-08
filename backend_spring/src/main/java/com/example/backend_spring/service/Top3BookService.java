@@ -29,23 +29,21 @@ public class Top3BookService {
     private Pageable page = PageRequest.of(0,3);
 
     public List<top_read_books> getTop3Book(String alphaCode) {
-        ArrayList<top_read_books> topReadBooks = new ArrayList<>();
+        List<top_read_books> topReadBooks = new ArrayList<>();
         long countryCode = countryCodeService.getCountryCode(alphaCode);
         List<Long> getBooks = book_rents_repository.getTopBookId(page);
-        for(Long book : getBooks) {
+        for (Long book : getBooks) {
             Integer bookId = book.intValue();
             String bookName = books_repository.findById(bookId).get().getName();
 
             Integer authorId = author_books_repository.getAuthorId(bookId);
             String authorName = authors_repository.findById(authorId).get().getName();
 
+
             List<String> topBookBorrower = book_rents_repository.getTopBorrowerNames(countryCode, book, page);
+            System.out.println(topBookBorrower);
             topReadBooks.add(new top_read_books(bookName, authorName, topBookBorrower));
         }
-        if(topReadBooks.size() > 0) {
-            return topReadBooks;
-        }
-        return List.of();
+        return topReadBooks;
     }
-
 }

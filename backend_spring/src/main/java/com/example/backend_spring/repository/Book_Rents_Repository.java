@@ -14,19 +14,19 @@ import java.util.List;
 @Repository
 public interface Book_Rents_Repository extends JpaRepository<book_rents, book_rents_id> {
     @Cacheable(value="getTopBookId")
-    @Query("select br.bookId " +
+    @Query("select br.book_id " +
             "from book_rents br " +
-            "group by br.bookId " +
-            "order by count(br.bookId) desc")
+            "group by br.book_id " +
+            "order by count(br.book_id) desc")
     List<Long> getTopBookId(Pageable pageable);
 
     @Cacheable(value="getTopBorrowerNames")
     @Query("select p.name " +
             "from book_rents br " +
             "left outer join people p " +
-            "on br.peopleId = p.id " +
-            "where p.country_id = :countryId and br.bookId = :bookId " +
-            "group by br.peopleId, p.name " +
-            "order by count(br.peopleId) desc")
+            "on br.people_id = p.id " +
+            "where p.country_id = :countryId and br.book_id = :bookId " +
+            "group by br.people_id, p.name " +
+            "order by count(br.people_id) desc")
     List<String> getTopBorrowerNames(@Param("countryId") Long countryId, @Param("bookId") Long bookId, Pageable pageable);
 }
