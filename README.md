@@ -15,7 +15,6 @@ Before we begin, please ensure that you have the following software/packages ins
 - npm (8.14.0)
 - Node (16.16.0)
 - Java (17)
-- Docker (20.10.21)
 - Git (2.28.0)
 - IntelliJ or other IDE
 
@@ -38,9 +37,7 @@ Step 2. Choose the backend folder from the cloned repository and open it.
 
 Step 3. Run the `pom.xml` file or `right click on pom.xml > Maven > Reload project`
 
-Step 4. Setup the database using Docker. If you have Docker installed, you can go to the `docker-compose.yml` file and run the file by clicking the green play button on IntelliJ or by right-clicking and selecting Run file. If you're not using IntelliJ, go to the `backend` folder `cd backend` and run `docker-compose up -d`. To verify that the database is set up correctly, run `docker-compose ps` and check the output.
-
-Step 5. Run the backend by going to the `BackendApplication.java` file in `src/main/java/com/winsonjunior/mvpbooksrecord/BackendApplication.java` and running the file. You can do this by pressing the green play button in IntelliJ or right-clicking on the file and selecting `Run`. After the backend is started, you should see a message in the terminal similar to this:
+Step 4. Run the backend by going to the `BackendApplication.java` file in `src/main/java/com/winsonjunior/mvpbooksrecord/BackendApplication.java` and running the file. You can do this by pressing the green play button in IntelliJ or right-clicking on the file and selecting `Run`. After the backend is started, you should see a message in the terminal similar to this:
 
 
 ```
